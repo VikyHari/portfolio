@@ -5,13 +5,19 @@ import Home from "./container/Homepage/Home";
 import About from "./container/About";
 import Navbar from "./component/Navbar";
 import { Nav, Container } from "react-bootstrap";
+import "./App.css";
 
 function App() {
   return (
-    <Router> {/* Move Router to wrap the entire App */}
+    <Router>
+      {" "}
+      {/* Move Router to wrap the entire App */}
       <>
-        <Navbar bg="primary" data-bs-theme="dark" fixed="top">
-          <Container>
+        {/* <Navbar
+         bg="dark"
+          fixed="top"
+        >
+          <Container className="justify-content-md">
             <Navbar.Brand as={Link} to="/">
               Navbar
             </Navbar.Brand>
@@ -31,7 +37,10 @@ function App() {
               </Nav.Link>
             </Nav>
           </Container>
-        </Navbar>
+        </Navbar> */}
+
+       
+<Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -41,6 +50,5 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
 
 export default App;
