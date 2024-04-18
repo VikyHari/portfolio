@@ -1,37 +1,48 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import background from "../../assests/images/background.jpg"
 
 function Home() {
   return (
     <div>
-      <Navbar bg="primary" data-bs-theme="dark" fixed="top">
-        <Container>
-          <Navbar.Brand as={Link} to="/">
-            Navbar
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
-              Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about">
-              About
-            </Nav.Link>
-            <Nav.Link as={Link} to="/skills">
-              Skills
-            </Nav.Link>
-            <Nav.Link as={Link} to="/projects">
-              Projects
-            </Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-      <div className="Container row-md-4" style={{ paddingTop: "56px" }}>
-        {/* Add your page content here */}
-        <h1>Welcome to Vignesh"s Web Developemnt Portfolio</h1>
-        <p>This is the content of the home page.</p>
-      </div>
+      <Container fluid>
+      <Row>
+        {/* First Container */}
+        <Col>
+          <Container style={{ paddingTop: '56px' }}>
+            <Row className="justify-content-center">
+              <Col>
+                <h1>Crafting Experiences: A Frontend Developer's Portfolio Journey</h1>
+              </Col>
+            </Row>
+            <Row className="justify-content-center">
+              <Col>
+                <p>
+                  Title: Crafting Experiences: A Frontend Developer's Portfolio
+                  Journey Welcome to my portfolio! I'm [Your Name], a frontend
+                  developer with a year of hands-on experience in React and React
+                  Native. Join me as I showcase my journey of growth, learning, and
+                  passion for crafting captivating digital experiences.
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </Col>
+        
+        {/* Second Container */}
+        <Col>
+          <Container>
+            <Row className="justify-content-center">
+              <Col md={6} style={{width:'50px', height:'50px'}}>
+                {/* Place your image component here */}
+                <img src={background} alt="Your Image" />
+              </Col>
+            </Row>
+          </Container>
+        </Col>
+      </Row>
+    </Container>
     </div>
   );
 }
